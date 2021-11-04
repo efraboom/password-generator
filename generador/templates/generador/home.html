@@ -1,0 +1,42 @@
+{% extends 'generador/layout.html' %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+    <form action="{% url 'password' %}" class="card card-body p-5"
+    
+    style="background-color: #121212;"
+    >
+        <h2>Generador de contraseñas</h2>
+        <label for="length">Selecciona la longitud de tu contraseña</label>
+        <select name="length" id="length" class="form-control my-2">
+            <option value="6">6 caracteres</option>
+            <option value="7">7 caracteres</option>
+            <option value="8">8 caracteres</option>
+            <option value="9">9 caracteres</option>
+            <option value="10">10 caracteres</option>
+            <option value="11">11 caracteres</option>
+            <option value="12">12 caracteres</option>
+            <option value="13">13 caracteres</option>
+            <option value="14">14 caracteres</option>
+        </select>
+
+        <div class="form-check form-switch my-2">
+            <input class="form-check-input" type="checkbox" role="switch" id="uppercase" name="uppercase">
+            <label class="form-check-label" for="uppercase">Mayusculas</label>
+        </div>
+
+        <div class="form-check form-switch my-2">
+            <input class="form-check-input" type="checkbox" role="switch" name="especial" id="especial">
+            <label class="form-check-label" for="especial">Caracteres ecpeciales</label>
+        </div>
+
+        <div class="form-check form-switch my-2">
+            <input class="form-check-input" type="checkbox" role="switch" name="number" id="number">
+            <label class="form-check-label" for="number">Números</label>
+        </div>        
+        <button class="btn btn-primary">Generar contraseña</button>
+    </form>
+</div>
+
+{% endblock %}
